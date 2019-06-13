@@ -2,7 +2,7 @@ import os
 import csv
 
 input_filepath = os.path.join("..","..","Resources","budget_data.csv")
-output_filepath = os.path.join("..","..","Resources","PyBank_result.txt")
+output_filepath = os.path.join("..","..","Resources","Financial_Analysis.txt")
 
 with open(input_filepath,"r",encoding="UTF-8",newline="") as budget_data_file:
    
