@@ -2,7 +2,7 @@ import os
 import csv
 
 input_filepath = os.path.join("..","..","Resources","budget_data.csv")
-output_filepath = os.path.join("..","..","Resources","Financial_Analysis.txt")
+output_filepath = os.path.join("Financial_Analysis.txt")
 
 with open(input_filepath,"r",encoding="UTF-8",newline="") as budget_data_file:
    
@@ -45,10 +45,13 @@ with open(input_filepath,"r",encoding="UTF-8",newline="") as budget_data_file:
     date_greatest_decrease = str(dates[profit_changes.index(greatest_profit_decrease)])
 
     output_message = (f"\nFinancial Analysis\n----------------------------\nTotal month: {total_month} \nTotal: ${total_amount}\nAverage  Change: ${average_profit_change}\nGreatest Increase in Profits: {date_greatest_increase} (${greatest_profit_increase})\nGreatest Decrease in Profits: {date_greatest_decrease} (${greatest_profit_decrease})")
+    
+    # print to console
     print(output_message)
 
-with open(output_filepath,"w",newline="") as budget_analysis_file:
+    # write to txt file
+    with open(output_filepath,"w",newline="") as budget_analysis_file:
     
-    budget_analysis_file.writelines(output_message)
+        budget_analysis_file.writelines(output_message)
 
 
